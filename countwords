@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+input=$0
+counter=0
+
+# Mesure teh longest input line
+maxlen=$( wc -L $input ) # | cut -d ' ' -f 1 )
+
+while read line;
+do
+    input=( "${input[@]}" "$line")
+done
+
+# while read line
+for line in "${input[@]}"
+do
+    # for (( i=0; i<$maxlen; i++ ))
+    # do
+    # 	$line="-" # $( echo  $line " " )
+    # done
+
+    isEven=$( expr $counter % 2 )
+    if [ $isEven -ne 0 ];
+    then
+        echo "$line"
+    else
+	linelength=$( echo ${#string} )
+	padding=( $maxlen -$linelength ) # (( $maxlen - ${#line} ))
+	echo "PADDING: " $padding
+	echo "$( tput smso )$line$(printf "%-${padding}d" "x")$( tput sgr0 )"
+	linelength=0
+	padding=0
+    fi
+    (( counter ++ ))
+done

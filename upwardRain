@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+chars=('_' '.' '+') ; for ((i=0; i<1000; i+=$(($RANDOM%10)))); do printf "%$((RANDOM%$(($(tput cols)/2))))s\n" ${chars[RANDOM%${#chars[@]}]} ; done

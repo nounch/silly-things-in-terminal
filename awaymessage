@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+deadline = 3000
+
+for (( i=0; ; i++ ));
+do
+    clear;
+    echo -e "********\n*     Away     *\n********\n\n""Count:   ""$i\n""Time:      $(date +"%T")""\nBack:       ""$deadline" | figlet
+    ((deadline--))
+    sleep 0.2
+done

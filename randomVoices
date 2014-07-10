@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+chars=('ljljljljljljl' 'zzzzzzzz' 'tttttttt' 'dddddddd' 'rrrrrrrr' 'kkkkkkkkk') ; for ((i=0; i<1000; i+=$(($RANDOM%10)))); do espeak -s 500 -v en+whisper "${chars[$RANDOM%${#chars[@]}]}"; done

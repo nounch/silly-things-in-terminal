@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+(while read ODD; do echo "$(tput bold)${ODD}$(tput sgr0)"; if read EVEN; then echo "$(tput setf 1)${EVEN}$(tput sgr0)"; fi; done) < foo

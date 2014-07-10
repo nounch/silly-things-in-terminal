@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# set -x
+
+center() {
+    value="$1"
+    if [[ ${#value} -lt $(tput cols) ]] ;
+    then
+	width=$(( ( $(tput cols) - ${#value} ) / 2 ))
+	printf "%${width}s\n" "$1"
+    else
+	echo "$1"
+    fi
+}
+
+center "$1"

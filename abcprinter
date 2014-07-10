@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+for i in {0..10} ; do clear ; for c in {a..z} ; do clear ; echo $c | figlet ; sleep 0.2 ; done ; sleep 0.3 ; done

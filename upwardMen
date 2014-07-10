@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+chars=('__o__' '|  ' '/ \ ' '/   \') ; for i in $(seq 1 3 1000) ; do spaces=$(($RANDOM%$(tput cols) / 2)) ; for j in ${!chars[@]} ; do printf "%$(($spaces))s\n" "${chars[$j]}" ; done ; done

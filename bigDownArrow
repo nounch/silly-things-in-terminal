@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+for k in {0..100}; do for j in $(seq $(($(tput lines)/$k)) $(($(tput cols)/2))); do printf "%$(($j))s%$(($(tput cols)-$j*2))s\n" "\\" "/"; done ; sleep 0.008 ; done ; clear

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+for j in {0..100}; do for i in $(seq 0 $(($RANDOM%$(tput lines)-3))); do printf "%$(($i))s\n%$(($(tput cols)/2))s" "\\" "|"; done; clear; sleep 0.003; done

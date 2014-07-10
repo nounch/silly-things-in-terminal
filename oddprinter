@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+input=$HOME/test/questorming/metaQuestions.txt
+
+# Mesure the longest line in the file
+maxlen=`wc -L $input | cut -d ' ' -f 1`
+
+# Pad each line to $maxlen characters
+while read line
+do
+    printf "%-${maxlen}s\n" "$line" >> output.txt
+done < $input
+
+(while read ODD;
+    do echo -e "\e[0;30;47m\em${ODD}";
+    if read EVEN;
+    then echo -en "\e[0;30;42m${EVEN}$(tput sgr0)";
+    fi ; echo -e "\e[m";
+    done) < output.txt | less -R

@@ -1,0 +1,16 @@
+- Prompt at top:
+PS1='\[$(tput csr 1 "$((LINES))"; tput home; tput el)\]\$ '; trap "printf %s \"$(tput ed)\"" DEBUG
+- Background color
+export PS1="\[$(tput setab 7)$(tput setaf 1)(tput bold)\]\u@\h:\w $ \[$(tput sgr0)\]\n$(echo -e "\e[1;42m"$(echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>"))\e[m\n"
+- Blinking
+export PS1="\[$(tput setab 2)$(tput setaf 0)\]\u@\h:\w $\[$(tput blink)$(tput setab 7)\]<   \!   >\[$(tput sgr0)\]\n$(tput setaf 7)$(tput blink)$(echo -e "\e[1;42m"$(echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"))\e[m\n"
+
+export PS1="\[$(tput setab 1)\] \[$(tput setab 2)$(tput setaf 0)\]\u@\h:\w $\[$(tput blink)$(tput setab 7)\](   \!   )\[$(tput sgr0)\]\n\[$(tput setab 1)\] $(tput setaf 7)$(tput blink)$(echo -e "\e[1;42m"$(echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"))\e[m\n"
+
+export PS1="\[$(tput blink)$(tput setab 7)$(tput setaf 0)\]<   \!   >\[$(tput setab 2)$(tput setaf 0)\]\u@\h:\w $\\[$(tput sgr0)\]\n$(tput setaf 7)$(tput blink)$(echo -e "\e[1;42m"$(echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"))\e[m\n"
+export PS1="\033[32m\u@\h \033[0;35m\n\$(cal)\n\033[0;0;36m\w\\n \033[1;31m>>> \033[m"
+- Check status of most resenty executed foreground-pipeline
+export PS1="\[\e[01;32m\]\u@\h \[\e[01;34m\]\W \`if [ \$? = 0 ]; then echo -e '\e[01;32m:)'; else echo -e '\e[01;31m:('; fi\` \[\e[01;34m\]$\[\e[00m\] "
+- With info bar
+export PS1="\033[0;41m                            \033[0;30;41m\H \033[0;37;41m<<<\033[0;41m\n \033[m \033[0;36m$(date +"%T")\n\033[0;41m \033[m \033[0;32m\w\n\033[0;41m \033[m\033[0;37;41m>>> \033[m"
+

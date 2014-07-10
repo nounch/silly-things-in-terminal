@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+for i in {0..4}; do echo -e "\033[3$(($RANDOM%6))m$(bash upwardMen.sh)"; echo -e "\033[m"; done ; clear

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+hrule=$(seq -s '-' 81 | sed "s/[0-9]//g") ; for file in $(ls) ; do echo $hrule ; printf "%80s\n" $file ; echo $hrule ; for line in $(cat $file); do printf "> %s\n" $line ; done; done

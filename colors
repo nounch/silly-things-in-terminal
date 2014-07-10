@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# Test all colors
+testColors () {
+    brightness=$1;
+    counter=$2;
+
+    for (( i =0; i < $counter; i++ ))
+    do
+	echo -e "\e[$brightness;3""$i""mTest" "$i"
+    done
+}
+
+seperator () {
+    echo
+    for (( i = 0; i < 80; i++ ))
+    do
+	echo -ne "-"
+    done
+    echo
+    echo
+}
+
+clearColors () {
+    echo -e "\e[m"
+}
+
+clearColors
+echo "Dark colors:" | boxes -d shell
+testColors 0 7
+
+clearColors
+seperator
+
+echo "Dark colors:" | boxes -d shell
+testColors 1 7
+
+# Reset color to white
+echo  -e "\e[m"

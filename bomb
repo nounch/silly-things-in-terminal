@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+
+for (( i=0; i<=81; i++ )); do clear; printf "%s"  "--------------------------------------------------------------------------------" | sed "s/-/o/$i"; sleep 0.08; done; printf ">>BOOOOOOOOOOOM<<\n"; sleep 0.08; printf "\n"

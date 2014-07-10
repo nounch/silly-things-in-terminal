@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+chars=('-' '+' '=') ; for i in $(seq 100 3 5000) ; do printf "%$(($RANDOM%$(($(tput cols)))))s %$(($RANDOM%$(tput cols)))s\n" ${chars[$RANDOM%${#chars[@]}]} $(seq 1 $(($(tput lines)*2))) ; done

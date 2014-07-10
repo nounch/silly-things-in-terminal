@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+target="$1"
+
+usage() {
+    echo "watchprocess"
+    echo "Usage: watchprocess <processname>"
+    echo "Watches a process in the context of other processes"
+}
+
+if [ $# != 1 ]
+then
+    usage
+    exit
+fi
+
+for (( ; ; )) ;
+do
+    clear
+    pstree -h | sed "s/$target/$(tput setaf 1)$(tput bold)&$(tput sgr0)/g"
+    sleep 0.5
+done

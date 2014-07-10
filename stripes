@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+for i in $(seq 3000); do printf "%$((i*10/i*20))s" "-" ; done

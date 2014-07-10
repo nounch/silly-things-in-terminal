@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+chars=('-' '+' '\' '/'); for i in {0..1000}; do for j in ${chars[@]}; do printf "%$(($i))s %$(($i/2))s" $j " "; done; sleep 0.03; done
